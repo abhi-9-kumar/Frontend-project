@@ -54,10 +54,15 @@
 
 // export default Sidenav;
 
-import React from 'react';
+
 import { motion } from 'framer-motion';
 
+
+
 const Sidenav = () => {
+    
+
+
   return (
     <section className="w-[20%] h-full border-r-2 border-zinc-400 p-5">
       <div className="mx-auto max-w-5xl">
