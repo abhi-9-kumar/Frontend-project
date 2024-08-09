@@ -4,6 +4,7 @@ import Topnav from "./templates/Topnav";
 import axios from "../utils/axios";
 import Header from "./templates/Header";
 import HorizontalCards from "./templates/HorizontalCards";
+import Loading from "./Loading";
 // import Dropdown from "./templates/Dropdown";
 
 const Home = () => {
@@ -56,7 +57,7 @@ const Home = () => {
             </div>
         </>
     ) : (
-        <h1>Loading</h1>
+        <Loading/>
     );
 };
 
