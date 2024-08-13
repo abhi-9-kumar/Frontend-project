@@ -68,42 +68,42 @@ const Sidenav = () => {
       <div className="mx-auto max-w-5xl">
         <Link
           heading="Trending" 
-          subheading="Learn what we do here"
-          href="#"
+          subheading="Check out trending movies and tv shows"
+          href="/trending"
           icon="ri-fire-fill"
         />
         <Link
           heading="Popular"
-          subheading="We work with great people"
-          href="#"
+          subheading="Popular movies and tv shows"
+          href="/popular"
           icon="ri-bard-fill"
         />
         <Link
           heading="Movies"
-          subheading="Our work speaks for itself"
-          href="#"
+          subheading="Explore Movies"
+          href="/movie"
           icon="ri-movie-2-fill"
         />
         <Link
-          heading="TV Shows"
-          subheading="We want cool people"
-          href="#"
+          heading="TV-Shows"
+          subheading="Explore TV-shows"
+          href="/tvshows"
           icon="ri-tv-2-fill"
         />
         <Link
           heading="People"
-          subheading="In case you're bored"
-          href="#"
+          subheading="All celebrities at one place"
+          href="/people"
           icon="ri-team-fill mr-2"
         />
         <Link
           heading="About"
-          href="#"
+          href="/aboutus"
           icon="ri-information-fill"
         />
         <Link
           heading="Contact"
-          href="#"
+          href="/contact"
           icon="ri-phone-fill mr-2"
         />
       </div>
