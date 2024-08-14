@@ -10,6 +10,8 @@ import Contact from "./components/Contact";
 import Moviedetails from "./components/Moviedetails";
 import Tvdetails from "./components/Tvdetails";
 import Persondetails from "./components/Persondetails";
+import Trailer from "./components/templates/Trailer";
+
 
 
 const App = () => {
@@ -23,6 +25,7 @@ const App = () => {
 
                 <Route path="/movie" element={<Movie/>}/>
                 <Route path="/movie/details/:id" element={<Moviedetails/>}/>
+                <Route path="/movie/details/:id/trailer" element={<Trailer/>}/>
                 
 
                 <Route path="/tvshows" element={<Tvshows/>}/>

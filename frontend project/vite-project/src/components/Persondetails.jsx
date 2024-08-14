@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
@@ -97,11 +97,7 @@ const PersonDetails = () => {
 
           <div className="w-full flex justify-between mt-5">
             <h1 className="text-xl text-zinc-400 font-semibold">Acting</h1>
-            <Dropdown
-              title="Category"
-              options={["tv", "movie"]}
-              func={(e) => setCategory(e.target.value)}
-            />
+            
           </div>
 
           <div className="list-disc text-zinc-400 w-full h-[50vh] mt-5 overflow-x-hidden overflow-y-auto shadow-xl shadow-[rgba(255,255,255,.3)] border-2 border-zinc-700 p-5">
