@@ -67,7 +67,7 @@ const TvDetails = () => {
             </small>
           </h1>
           <div className="mt-3 mb-5 flex items-center gap-x-3">
-            <span className="rounded-full font-xl font-semibold bg-yellow-600 text-white w-[5vh] h-[5vh] flex justify-center items-center">
+            <span className="rounded-full font-xl font-semibold bg-[#6556CD] text-white w-[5vh] h-[5vh] flex justify-center items-center">
               {(detail.vote_average * 10).toFixed()}
               <sup>%</sup>
             </span>
@@ -82,7 +82,7 @@ const TvDetails = () => {
           <h1 className="text-2xl mb-3 mt-5">TV Translated</h1>
           <p className="mb-10">{info.translations ? info.translations.join(", ") : 'No translations available'}</p>
           <Link
-            className="p-5 bg-[#6556CD] rounded-lg text-white inline-flex items-center"
+             className="p-5 bg-[#6556CD] rounded-lg text-white inline-flex items-center transform transition duration-300 ease-in-out hover:bg-[#4f42b5] hover:shadow-lg hover:scale-105"
             to={`${pathname}/trailer`}
           >
             <i className="text-xl ri-play-fill mr-3"></i> Play Trailer

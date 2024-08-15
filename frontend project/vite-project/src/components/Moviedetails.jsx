@@ -103,7 +103,7 @@ const MovieDetails = () => {
           <p className="mb-10">{info.translations ? info.translations.join(", ") : "No translations available."}</p>
 
           <Link
-            className="p-5 bg-[#6556CD] rounded-lg text-white inline-flex items-center"
+             className="p-5 bg-[#6556CD] rounded-lg text-white inline-flex items-center transform transition duration-300 ease-in-out hover:bg-[#4f42b5] hover:shadow-lg hover:scale-105"
             to={`${pathname}/trailer`}
           >
             <i className="text-xl ri-play-fill mr-3"></i> Play Trailer

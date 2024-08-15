@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import noimage from "/noimage.jpg"
 
 
 const Cards = ({ data,title }) => {
@@ -18,7 +19,7 @@ const Cards = ({ data,title }) => {
                 ? `https://image.tmdb.org/t/p/original/${
                     c.poster_path || c.backdrop_path || c.profile_path
                   }`
-                : ""
+                : noimage
             }
             alt={c.name || c.title || c.original_name || c.original_title}
           />
