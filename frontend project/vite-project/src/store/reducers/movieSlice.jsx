@@ -10,6 +10,7 @@ export const movieSlice = createSlice({
 
         loadmovie:(state,action) => {
             state.info = action.payload;
+            // console.log(state.info)
         },
 
         removemovie: (state,action) => {

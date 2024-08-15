@@ -27,6 +27,7 @@ const TvDetails = () => {
   const { detail } = info;
   const backdropPath = detail.backdrop_path ? `https://image.tmdb.org/t/p/original/${detail.backdrop_path}` : '';
   const posterPath = detail.poster_path ? `https://image.tmdb.org/t/p/original/${detail.poster_path}` : '';
+ // console.log(info);
 
   return (
     <div
@@ -36,28 +37,20 @@ const TvDetails = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="relative w-screen h-[180vh] px-[10%]"
+      className="relative w-screen h-[180vh] px-[5%]"
     >
+      
       {/* Navigation */}
-      <nav className="h-[10vh] w-full text-zinc-100 flex items-center gap-10 text-xl">
-        <Link
-          onClick={() => navigate(-1)}
-          className="hover:text-[#6556CD] ri-arrow-left-line"
-        ></Link>
-        <a target="_blank" rel="noopener noreferrer" href={detail.homepage}>
-          <i className="ri-external-link-line"></i>
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href={`https://www.wikidata.org/wiki/${info.externalid.wikidata.id}`}>
-          <i className="ri-earth-fill"></i>
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href={`https://www.imdb.com/title/${info.externalid.imdb_id}`}
-        >
-          IMDb
-        </a>
+      <nav className="h-20 w-full text-zinc-100 font-weight:800 p-3">
+    <Link
+   onClick={() => navigate(-1)}
+   className="ri-arrow-left-line text-5xl rounded-full  hover:bg-[#6556CD] hover:text-white transition-all duration-300 cursor-pointer"
+   ></Link>
+  
+  
+  
       </nav>
+      
 
       {/* Poster and Details */}
       <div className="w-full flex mt-5">
@@ -97,69 +90,29 @@ const TvDetails = () => {
         </div>
       </div>
 
-      {/* Available on Platforms */}
-      <div className="w-[80%] flex flex-col gap-y-5 mt-10">
-        {info.watchproviders && info.watchproviders.flatrate && (
-          <div className="flex gap-x-10 items-center text-white">
-            <h1>Available on Platforms</h1>
-            {info.watchproviders.flatrate.map((w, i) => (
-              <img
-                key={i}
-                title={w.provider_name}
-                className="w-[5vh] h-[5vh] object-cover rounded-md"
-                src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
-                alt={w.provider_name}
-              />
-            ))}
-          </div>
-        )}
-        {info.watchproviders && info.watchproviders.rent && (
-          <div className="flex gap-x-10 items-center text-white">
-            <h1>Available on Rent</h1>
-            {info.watchproviders.rent.map((w, i) => (
-              <img
-                key={i}
-                title={w.provider_name}
-                className="w-[5vh] h-[5vh] object-cover rounded-md"
-                src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
-                alt={w.provider_name}
-              />
-            ))}
-          </div>
-        )}
-        {info.watchproviders && info.watchproviders.buy && (
-          <div className="flex gap-x-10 items-center text-white">
-            <h1>Available on Buy</h1>
-            {info.watchproviders.buy.map((w, i) => (
-              <img
-                key={i}
-                title={w.provider_name}
-                className="w-[5vh] h-[5vh] object-cover rounded-md"
-                src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
-                alt={w.provider_name}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+      
 
       {/* Seasons */}
       <hr className="mt-10 mb-5 border-none h-[2px] bg-zinc-500" />
-      <h1 className="text-3xl font-bold text-white">Seasons</h1>
-      <div className="w-full flex overflow-x-scroll mb-5 p-5">
-        {detail.seasons.map((s, i) => (
-          <div key={i} className="w-[15vh] mr-[8%]">
-            <img
-              className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[30vh] min-w-[14vw] object-cover"
-              src={`https://image.tmdb.org/t/p/original/${s.poster_path}`}
-              alt={s.title || s.name || 'Season Poster'}
-            />
-            <h1 className="text-2xl text-zinc-300 mt-3 font-semibold">
-              {s.name || s.title || 'Season Title'}
-            </h1>
-          </div>
-        ))}
+<h1 className="text-3xl font-bold text-white">Seasons</h1>
+<div className="w-full overflow-x-auto mb-5 p-5">
+  <div className="flex flex-nowrap gap-5">
+    {detail.seasons.map((s, i) => (
+      <div key={i} className="flex-shrink-0 w-[200px] flex flex-col items-center">
+        <img
+          className="shadow-lg h-[300px] w-full object-cover"
+          src={`https://image.tmdb.org/t/p/original/${s.poster_path}`}
+          alt={s.title || s.name || 'Season Poster'}
+        />
+        <h1 className="text-xl text-zinc-300 mt-3 font-semibold text-center">
+          {s.name || s.title || 'Season Title'}
+        </h1>
       </div>
+    ))}
+  </div>
+</div>
+
+
 
       {/* Recommendations and Similar Stuff */}
       <hr className="mt-10 mb-5 border-none h-[2px] bg-zinc-500" />
