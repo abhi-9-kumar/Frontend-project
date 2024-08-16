@@ -54,72 +54,66 @@
 
 // export default Sidenav;
 
-
+import { Link as RouterLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-
-
 const Sidenav = () => {
-    
-
-
   return (
     <section className="w-[20%] h-full border-r-2 border-zinc-400 p-5">
       <div className="mx-auto max-w-5xl">
-        <Link
+        <NavLink
           heading="Trending" 
           subheading="Check out trending movies and tv shows"
-          href="/trending"
+          to="/trending"
           icon="ri-fire-fill"
         />
-        <Link
+        <NavLink
           heading="Popular"
           subheading="Popular movies and tv shows"
-          href="/popular"
+          to="/popular"
           icon="ri-bard-fill"
         />
-        <Link
+        <NavLink
           heading="Movies"
           subheading="Explore Movies"
-          href="/movie"
+          to="/movie"
           icon="ri-movie-2-fill"
         />
-        <Link
+        <NavLink
           heading="TV-Shows"
           subheading="Explore TV-shows"
-          href="/tvshows"
+          to="/tvshows"
           icon="ri-tv-2-fill"
         />
-        <Link
+        <NavLink
           heading="People"
           subheading="All celebrities at one place"
-          href="/people"
-          icon="ri-team-fill mr-2"
+          to="/people"
+          icon="ri-team-fill"
         />
-        <Link
+        <NavLink
           heading="About"
-          href="/aboutus"
+          to="/aboutus"
           icon="ri-information-fill"
         />
-        <Link
+        <NavLink
           heading="Contact"
-          href="/contact"
-          icon="ri-phone-fill mr-2"
+          to="/contact"
+          icon="ri-phone-fill"
         />
       </div>
     </section>
   );
 };
 
-const Link = ({ heading, subheading, href, icon }) => {
+const NavLink = ({ heading, subheading, to, icon }) => {
   return (
-    <motion.a
-      href={href}
+    <motion.div
       initial="initial"
       whileHover="whileHover"
       className="group relative flex items-center justify-between border-b-2 border-neutral-700 py-3 transition-colors duration-500 hover:border-neutral-50 md:py-6"
     >
-      <div className="flex items-center">
+      <RouterLink to={to} className="flex items-center w-full">
         <i className={`${icon} mr-2 text-4xl text-neutral-400 group-hover:text-neutral-50`}></i>
         <div>
           <motion.span
@@ -152,7 +146,7 @@ const Link = ({ heading, subheading, href, icon }) => {
             {subheading}
           </span>
         </div>
-      </div>
+      </RouterLink>
 
       <motion.div
         variants={{
@@ -167,9 +161,8 @@ const Link = ({ heading, subheading, href, icon }) => {
         }}
         transition={{ type: "spring" }}
         className="relative z-10 p-4"
-      >
-      </motion.div>
-    </motion.a>
+      />
+    </motion.div>
   );
 };
 
